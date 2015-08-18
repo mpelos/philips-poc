@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Philips POC</title>
+
+    <script type="text/javascript" src="http://sugarjs.com/release/current/sugar.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+
+    <script type="text/javascript" src="assets/javascripts/philips.app.js"></script>
+    <script type="text/javascript" src="assets/javascripts/config/load_data.js"></script>
+    <script type="text/javascript" src="assets/javascripts/data.js"></script>
+
+    <script type="text/javascript" src="assets/javascripts/controllers/equipment_list_controller.js"></script>
+    <script type="text/javascript" src="assets/javascripts/models/equipment.js"></script>
+    <script type="text/javascript" src="assets/javascripts/models/equipment_image.js"></script>
+    <script type="text/javascript" src="assets/javascripts/models/exam.js"></script>
+    <script type="text/javascript" src="assets/javascripts/models/medical_specialty.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/equipment_association_binder.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/equipment_image_service.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/equipment_service.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/exam_association_binder.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/exam_service.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/medical_specialty_association_binder.js"></script>
+    <script type="text/javascript" src="assets/javascripts/services/medical_specialty_service.js"></script>
+  </head>
+
+  <body ng-app="philipsPOC">
+    <ul ng-controller="EquipmentListController">
+      <li ng-repeat="equipment in equipments">
+        <p>{{ equipment.name }}</p>
+        <img ng-src="{{ equipment.images[0].image }}" alt="">
+      </li>
+    </ul>
+  </body>
+</html>
